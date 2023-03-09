@@ -90,9 +90,9 @@ export default function Index() {
             serverInvalid={!!serverErrors.email}
           >
             <div className="flex items-baseline justify-between">
-              <Form.FormLabel className="text-[15px] font-medium leading-[35px] text-white">
+              <Form.Label className="text-[15px] font-medium leading-[35px] text-white">
                 Email
-              </Form.FormLabel>
+              </Form.Label>
               <Form.Message
                 className="text-[13px] text-white opacity-[0.8]"
                 match="valueMissing"
@@ -120,9 +120,9 @@ export default function Index() {
             serverInvalid={!!serverErrors.question}
           >
             <div className="flex items-baseline justify-between">
-              <Form.FormLabel className="text-[15px] font-medium leading-[35px] text-white">
+              <Form.Label className="text-[15px] font-medium leading-[35px] text-white">
                 Question
-              </Form.FormLabel>
+              </Form.Label>
               <Form.Message
                 className="text-[13px] text-white opacity-[0.8]"
                 match="valueMissing"
