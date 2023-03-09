@@ -5,6 +5,7 @@ import {
   Form as RemixForm,
   useActionData,
   useNavigation,
+  useSubmit,
 } from "@remix-run/react";
 import { useEffect, useRef } from "react";
 import { z } from "zod";
@@ -35,6 +36,7 @@ export async function action({ request }: ActionArgs) {
 export default function Index() {
   const formRef = useRef<HTMLFormElement>(null);
   const actionData = useActionData<typeof action>();
+  const submit = useSubmit();
   const navigation = useNavigation();
   const { serverErrors, setServerErrors, clearServerErrors, clearServerError } =
     useServerErrors<typeof FormSchema>({
@@ -64,7 +66,24 @@ export default function Index() {
         asChild
         onClearServerErrors={clearServerErrors}
       >
-        <RemixForm ref={formRef} method="post">
+        <RemixForm
+          ref={formRef}
+          method="post"
+          onSubmit={async (e) => {
+            const result = await FormSchema.safeParseAsync(
+              Object.fromEntries(new FormData(e.currentTarget).entries())
+            );
+
+            if (!result.success) {
+              setServerErrors(
+                transformFieldErrors<typeof FormSchema>(result.error)
+              );
+              return;
+            }
+
+            submit(e.currentTarget);
+          }}
+        >
           <Form.Field
             className="grid mb-[10px]"
             name="email"

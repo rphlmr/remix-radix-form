@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { z } from "zod";
-import type { FormServerErrors } from "./form.server";
+import type { FormServerErrors } from "./form";
 
 export function useServerErrors<
   Schema extends z.AnyZodObject,
