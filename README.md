@@ -5,6 +5,16 @@
 https://user-images.githubusercontent.com/20722140/224019481-3e838231-271c-423b-8d6e-5e81983bbb73.mp4
 
 
+## What?
+
+### A mix of HTML validation (client side) and server-side validation (Zod)
+https://github.com/rphlmr/remix-radix-form/blob/main/app/routes/index.tsx
+
+### Zod all the way
+https://github.com/rphlmr/remix-radix-form/blob/main/app/routes/full-zod.tsx
+
+
+
 
 - [Remix Docs](https://remix.run/docs)
 
