@@ -8,6 +8,8 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@conform-to/react": "^0.6.0",
+    "@conform-to/zod": "^0.6.0",
     "@radix-ui/colors": "^0.1.8",
     "@radix-ui/react-form": "^0.0.2",
     "@remix-run/node": "^1.14.0",
